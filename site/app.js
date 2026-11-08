@@ -135,7 +135,7 @@
       label(primary, 'Download free');
       label(secondary, 'See what it runs on');
       secondary.href = '#download';
-      if (arm) fine.textContent = 'Windows on ARM isn\'t supported. It needs a Windows 11 x64 PC or a Mac.';
+      if (arm) fine.textContent = 'Windows on ARM isn\'t supported. It needs a regular Windows 11 PC or a Mac.';
       else if (os === 'android' || os === 'linux') fine.textContent = 'Free for Windows 11, Mac, iPhone and iPad. Android and Linux aren\'t supported.';
     }
     const soon = $('.qd-soon');
@@ -147,7 +147,7 @@
   /* ---------- Video: loads from YouTube only after a click ---------- */
   const video = $('#video');
   if (S.youtubeId) {
-    $('#watch').hidden = false; $('#heroWatch').hidden = false;
+    $('#watch').hidden = false; $('#heroWatch').hidden = false; $('#closerWatch').hidden = false;
     // A plain link too: some connections get YouTube's "confirm you're not a bot" inside embeds.
     const yt = $('#watchOnYouTube');
     if (yt) { yt.href = `https://www.youtube.com/watch?v=${encodeURIComponent(S.youtubeId)}`; yt.hidden = false; }
