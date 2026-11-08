@@ -46,7 +46,7 @@
     setLink(el, url);
     if (el.dataset.link === 'testflight' && !url) {
       const label = el.querySelector('span') || el;
-      label.lastChild.textContent = 'Coming to TestFlight';
+      label.lastChild.textContent = 'iPhone app coming soon';
     }
     if (url && isExternal(url)) el.rel = 'noopener';
   });
@@ -128,7 +128,7 @@
       label(secondary, 'Download for Windows');
       fine.innerHTML = 'Free and open source. No account, no subscription, no tracking. <a href="' + d.macIntel + '">Older Intel Mac? Use this one.</a>';
     } else if (os === 'ios') {
-      primary.href = d.testflight || '#iphone'; label(primary, d.testflight ? 'Get the beta on TestFlight' : 'iPhone: coming to TestFlight');
+      primary.href = d.testflight || '#iphone'; label(primary, d.testflight ? 'Get the iPhone and iPad app' : 'iPhone app coming soon');
       label(secondary, 'Windows and Mac');
       $('#heroIos').hidden = true;
     } else {
@@ -139,7 +139,7 @@
       else if (os === 'android' || os === 'linux') fine.textContent = 'Free for Windows 11, Mac, iPhone and iPad. Android and Linux aren\'t supported.';
     }
     const soon = $('.qd-soon');
-    if (soon && d.testflight) { soon.href = d.testflight; soon.lastChild.textContent = 'iPhone on TestFlight'; }
+    if (soon && d.testflight) { soon.href = d.testflight; soon.lastChild.textContent = 'iPhone and iPad app'; }
     const mine = { windows: 'windows', mac: 'mac', ios: 'ios' }[arm ? '' : os];
     if (mine) { const card = $(`.plat[data-os="${mine}"]`); if (card) card.classList.add('mine'); }
   })();
